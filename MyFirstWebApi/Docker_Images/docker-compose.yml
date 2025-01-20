@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql_container
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Fuziya123!
+    volumes:
+      - type: bind
+        source: ./mssql
+        target: /var/opt/mssql
